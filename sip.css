@@ -192,8 +192,7 @@ nav a[aria-label="SIP home"]{display:inline-flex;align-items:center;min-height:4
 /* founder */
 .founder .wrap{display:grid;grid-template-columns:.75fr 1.25fr;gap:56px;align-items:center}
 .portrait{aspect-ratio:4/5;border-radius:16px;border:1px solid var(--line);background:linear-gradient(160deg,#131F3E,#0A1020);position:relative;overflow:hidden}
-.portrait svg{position:absolute;inset:0;width:100%;height:100%}
-.portrait .photo{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 20%;z-index:1;background:#0A1020}
+.portrait .photo{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:58% 8%;z-index:1;background:#0A1020}
 .portrait .tag{z-index:2}
 .portrait .tag{position:absolute;left:16px;bottom:16px;font-family:var(--mono);font-size:.72rem;color:var(--muted);background:rgba(10,16,32,.7);padding:6px 10px;border-radius:6px;border:1px solid var(--grid)}
 .founder blockquote{font-size:1.4rem;font-weight:700;line-height:1.35;max-width:30ch;letter-spacing:-.01em}
