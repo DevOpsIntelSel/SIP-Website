@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SIP ROI calculator</title>
+<meta name="description" content="What one improvement in first-to-second meeting conversion is worth to your pipeline. Use your own numbers.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%230A1020'/%3E%3Ctext x='8' y='44' font-family='Arial' font-weight='900' font-style='italic' font-size='30' fill='%23C9CED6'%3ESIP%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="sip.css">
+</head>
+<body>
+<div id="bg" aria-hidden="true"><div class="grid"></div></div>
+<nav id="nav">
+  <div class="wrap">
+    <a href="index.html" aria-label="SIP home"><img class="logomark" src="sip-logo.png" width="160" height="56" alt="SIP"></a>
+    <div class="navlinks"><a href="how-it-works.html">How it works</a><a href="roi.html" class="active">ROI calculator</a><a href="index.html#waitlist">Waitlist</a><a href="contact.html">Contact</a><a class="btn primary" href="index.html#waitlist">Join the waitlist</a></div>
+    <button class="burger" aria-label="Menu" onclick="document.getElementById('mm').classList.toggle('open')"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+<div class="mobile-menu" id="mm" onclick="if(event.target.tagName==='A')this.classList.remove('open')">
+  <a href="how-it-works.html">How it works</a><a href="roi.html">ROI calculator</a><a href="index.html#waitlist">Waitlist</a><a href="contact.html">Contact</a>
+  <a class="btn primary" href="index.html#waitlist">Join the waitlist</a>
+</div>
+<section class="page-hero">
+  <div class="wrap">
+    <h1>What is one more second meeting worth to you?</h1>
+    <p class="lead" style="margin-top:22px">Most sales teams buy more leads before they fix what happens to the leads they have. Put your own numbers in and see what a better first meeting is worth in a year.</p>
+  </div>
+</section>
+<section class="calc" style="padding-top:8px">
+  <div class="wrap">
+    <div class="panel reveal">
+      <div>
+        <div class="field"><label for="meetings">First meetings per year</label><input id="meetings" type="number" value="288" min="0"></div>
+        <div class="field"><label for="conv">Current first-to-second meeting conversion</label><div class="range"><input id="conv" type="range" min="5" max="80" value="25"><span class="mono" id="convv">25%</span></div></div>
+        <div class="field"><label for="target">Target conversion</label><div class="range"><input id="target" type="range" min="5" max="90" value="50"><span class="mono" id="targetv">50%</span></div></div>
+        <div class="field"><label for="close">Close rate on qualified opportunities</label><div class="range"><input id="close" type="range" min="1" max="60" value="15"><span class="mono" id="closev">15%</span></div></div>
+        <div class="field"><label for="ltv">Customer lifetime value ($)</label><input id="ltv" type="number" value="100000" min="0" step="1000"></div>
+        <a class="btn primary mob-cta" href="index.html#waitlist">Join the waitlist</a>
+      </div>
+      <div class="result">
+        <div><div class="big" id="total">$1,080,000</div><div class="sub">additional customer value per year, illustrative</div></div>
+        <div class="kv"><span>Additional second meetings</span><span id="addm">72</span><span>Additional closed customers</span><span id="addc">10.8</span></div>
+        <a class="btn primary" href="index.html#waitlist">Join the waitlist</a>
+      </div>
+    </div>
+    <div class="assume reveal">
+      <h3>How the math works</h3>
+      <p>Additional second meetings = first meetings × (target conversion minus current conversion). Additional customers = additional second meetings × your close rate. Additional value = additional customers × lifetime value.</p>
+      <p>The defaults are an illustration, not a benchmark. The 25% starting point reflects what many teams see; the 50% target is where we're aiming, not a promised result. Your numbers are the ones that matter.</p>
+    </div>
+  </div>
+</section>
+<section class="waitlist" id="waitlist">
+  <div class="wrap">
+    <h2 class="reveal">Join the waitlist.</h2>
+    <div class="box reveal">
+      <div>
+        <p class="lead">SIP is in private beta with a small group of sales leaders. The waitlist gets in next.</p>
+        <ul><li>Free trial at launch, no card required</li><li>Priority onboarding</li><li>A say in what we build next</li></ul>
+      </div>
+      <form class="form" onsubmit="event.preventDefault();this.querySelector('.btn').textContent='You are on the waitlist';">
+        <input placeholder="First name" aria-label="First name" required>
+        <input placeholder="Last name" aria-label="Last name" required>
+        <input class="full" type="email" placeholder="Work email" aria-label="Work email" required>
+        <input placeholder="Company" aria-label="Company">
+        <select aria-label="Role"><option value="">Role</option><option>Sales leader</option><option>Account executive</option><option>Founder who sells</option><option>Other</option></select>
+        <button class="btn primary" type="submit">Join the waitlist</button>
+        <p class="fine">We'll email you when your access is ready. Nothing else.</p>
+      </form>
+    </div>
+  </div>
+</section>
+<section class="close" style="padding-top:24px">
+  <div class="wrap">
+    <h2 class="reveal">Now see what SIP does with a real prospect.</h2>
+    <div class="actions reveal"><a class="btn primary" href="index.html#waitlist">Join the waitlist</a><a class="btn ghost" href="how-it-works.html">How it works</a></div>
+  </div>
+</section>
+<footer>
+  <div class="wrap">
+    <div class="fcols">
+      <div class="fbrand"><img class="logomark" src="sip-logo.png" width="160" height="56" alt="SIP"><span class="ftag">Sales Intelligence &amp; Personalization</span><span class="fline">Built by sales pros, for sales pros.</span></div>
+      <div class="flinks"><a href="index.html#waitlist">Waitlist</a><a href="roi.html">ROI calculator</a><a href="contact.html">Contact</a><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a></div>
+    </div>
+    <div class="fcopy">© 2026 SIP. All rights reserved.<br><a class="credit" href="https://famedia.agency" target="_blank" rel="noopener">Designed by Famedia</a></div>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script>
+window.addEventListener('scroll',()=>{document.getElementById('nav').classList.toggle('scrolled',window.scrollY>24)},{passive:true});
+window.SIP={reduce:window.matchMedia('(prefers-reduced-motion: reduce)').matches,mobile:window.matchMedia('(max-width: 820px)').matches};
+if(!window.SIP.reduce&&typeof gsap!=='undefined'){gsap.registerPlugin(ScrollTrigger);
+document.querySelectorAll('.reveal').forEach(el=>gsap.to(el,{opacity:1,y:0,duration:.7,ease:'power2.out',scrollTrigger:{trigger:el,start:'top 84%',once:true}}));}
+else{document.querySelectorAll('.reveal').forEach(el=>{el.style.opacity=1;el.style.transform='none'})}
+</script>
+<script>
+(function(){const $=id=>document.getElementById(id);const fmt=n=>'$'+Math.round(n).toLocaleString();
+function calc(){const m=+$('meetings').value||0,c=+$('conv').value/100,t=+$('target').value/100,cl=+$('close').value/100,l=+$('ltv').value||0;
+$('convv').textContent=Math.round(c*100)+'%';$('targetv').textContent=Math.round(t*100)+'%';$('closev').textContent=Math.round(cl*100)+'%';
+const add=Math.max(0,m*(t-c)),closed=add*cl;$('addm').textContent=Math.round(add);$('addc').textContent=closed.toFixed(1);$('total').textContent=fmt(closed*l);}
+['meetings','conv','target','close','ltv'].forEach(id=>$(id).addEventListener('input',calc));calc();})();
+</script>
+</body></html>

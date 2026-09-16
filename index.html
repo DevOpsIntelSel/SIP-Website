@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SIP: Sales Intelligence & Personalization</title>
+<meta name="description" content="You got the meeting. SIP helps you earn the next one. A prepared, personalized playbook for every first call, in about two minutes.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%230A1020'/%3E%3Ctext x='8' y='44' font-family='Arial' font-weight='900' font-style='italic' font-size='30' fill='%23C9CED6'%3ESIP%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="sip.css">
+</head>
+<body>
+<div id="bg" aria-hidden="true"><div class="grid"></div></div>
+<nav id="nav">
+  <div class="wrap">
+    <a href="index.html" aria-label="SIP home"><img class="logomark" src="sip-logo.png" width="160" height="56" alt="SIP"></a>
+    <div class="navlinks"><a href="how-it-works.html">How it works</a><a href="roi.html">ROI calculator</a><a href="index.html#waitlist">Waitlist</a><a href="contact.html">Contact</a><a class="btn primary" href="index.html#waitlist">Join the waitlist</a></div>
+    <button class="burger" aria-label="Menu" onclick="document.getElementById('mm').classList.toggle('open')"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+<div class="mobile-menu" id="mm" onclick="if(event.target.tagName==='A')this.classList.remove('open')">
+  <a href="how-it-works.html">How it works</a><a href="roi.html">ROI calculator</a><a href="index.html#waitlist">Waitlist</a><a href="contact.html">Contact</a>
+  <a class="btn primary" href="index.html#waitlist">Join the waitlist</a>
+</div>
+<section class="hero" id="top">
+  <div class="wrap">
+    <div>
+      <h1>You got the meeting. SIP helps you earn the next one.</h1>
+      <p class="q">Could one small improvement add $1,000,000 to your pipeline?</p>
+      <p class="lead lead-long">Give SIP a name and a company. In about two minutes you get a prepared, personalized playbook for the first call: who they are, what they care about right now, and what to say first.</p>
+      <p class="lead lead-short">A name and a company in. A prepared, personalized playbook for the first call out, in about two minutes.</p>
+      <div class="actions">
+        <a class="btn primary" href="#waitlist">Join the waitlist</a>
+        <a class="btn ghost" href="#demo">Watch the demo</a>
+        <a class="btn link" href="#calculator">Run your own numbers</a>
+      </div>
+      <p class="note">Waitlist members get a free trial at launch. No card required.</p>
+    </div>
+    <div class="dossier" aria-label="Example SIP dossier">
+  <div class="d-head">
+    <div>
+      <div class="d-tags"><span class="d-tag cy"><i></i>Target acquired</span><span class="d-tag ok"><i></i>High confidence</span><span class="d-tag ok"><i></i>Verified ground truth</span></div>
+      <div class="d-title">Sales Intelligence Dossier for Jordan Ellis, CRO</div>
+      <div class="d-sell">Selling: your company</div>
+      <div class="d-name">Jordan Ellis, CRO</div>
+      <div class="d-role">VP Revenue @ <b>Northline Systems</b></div>
+    </div>
+    <div class="d-actions">
+      <span class="d-btn"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>New search</span>
+      <span class="d-btn"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M7 10h10M7 14h6"/></svg>Live battlecard</span>
+      <span class="d-btn amber"><svg viewBox="0 0 24 24"><path d="M12 3l2.5 5.5L20 9l-4 4 1 6-5-3-5 3 1-6-4-4 5.5-.5z"/></svg>Assemble sales slide</span>
+      <span class="d-btn"><svg viewBox="0 0 24 24"><path d="M4 5h16v11H8l-4 4z"/></svg>Simulate call</span>
+      <span class="d-btn purple"><svg viewBox="0 0 24 24"><path d="M13 3L5 14h6l-1 7 9-12h-6z"/></svg>War room sandbox</span>
+      <span class="d-btn cyan"><svg viewBox="0 0 24 24"><rect x="3" y="6" width="18" height="12" rx="2"/><path d="M3 8l9 6 9-6"/></svg>1-click outreach</span>
+      <span class="d-btn"><svg viewBox="0 0 24 24"><path d="M12 4v11M7 11l5 5 5-5M4 20h16"/></svg>Download PDF</span>
+    </div>
+  </div><div class="d-body"><div class="d-sec">10 key selling strategies</div><div class="d-line"><b>1.</b>Lead with outcomes: time-to-first-deal for new AEs, not features.</div><div class="d-line"><b>2.</b>Position as ramp acceleration for a team hiring 12 reps this quarter.</div><div class="d-line"><b>3.</b>Pilot fast: propose a four-week pilot with one measurable outcome.</div><div class="d-line"><b>4.</b>Reference the May raise and the investor pressure on pipeline directly.</div><div class="d-line"><b>5.</b>Data-first buyer: bring one number, not a deck.</div><div class="d-line"><b>6.</b>Ask what a good first 90 days looks like for a new AE.</div><div class="d-line"><b>7.</b>Competitive reframing: they've tried two prospecting tools; position around prep, not lists.</div><div class="d-line"><b>8.</b>Avoid generic AI claims. Show one concrete workflow.</div></div><div class="d-foot"><span>research · recommendations · battle card</span><span class="t"><span id="clock">00:00</span> <span class="cursor"></span></span></div></div>
+  </div>
+</section>
+
+<section class="problem" id="problem">
+  <div class="wrap">
+    <div class="reveal">
+      <h2>Too many first meetings end after one call.</h2>
+      <p class="lead lead-long" style="margin-top:18px">The CRM keeps score. Navigator finds the prospect. Nobody helps a seller walk in prepared enough to earn a second conversation. Generic preparation makes generic meetings, and generic meetings rarely get a second one.</p>
+      <p class="lead lead-short" style="margin-top:14px">The CRM keeps score. Navigator finds the prospect. Nobody helps a seller walk in prepared enough to earn a second one.</p>
+      <div class="statline"><span class="stat" id="stat40">0%</span><span class="cap">of a seller's week is spent actually selling.<small>Salesforce, State of Sales, 2026</small></span></div>
+    </div>
+    <div class="funnel reveal" aria-label="Illustrative funnel">
+      <div class="bar"><span>First meetings</span><div class="track"><div class="fill" style="--w:100%"></div></div><span class="n">100</span></div>
+      <div class="bar b2"><span>Second meetings</span><div class="track"><div class="fill" style="--w:25%"></div></div><span class="n">25</span></div>
+      <div class="bar b3"><span>Closed</span><div class="track"><div class="fill" style="--w:4%"></div></div><span class="n">4</span></div>
+      <p class="callout">75 conversations end after one call. Illustrative.</p>
+    </div>
+  </div>
+</section>
+
+<section class="shift" id="how">
+  <div class="stage">
+    <div class="wrap">
+      <div class="copy">
+        <h2>Six tabs of research become one page you can act on.</h2>
+        <p class="lead lead-long">Separate agents research the company, the buyer's intent, the decision maker, and what to do about it. Then they check each other's work and assemble one briefing.</p>
+        <p class="lead lead-short">Separate agents research the company, the buyer, and what to do about it, then assemble one briefing.</p>
+        <p style="margin-top:22px"><a class="btn link" href="how-it-works.html">See how it works</a></p>
+      </div>
+      <div class="field-box" id="fieldbox">
+        <div class="chip" style="top:0;left:2%"><i></i>Company signal<small>Series B in May. Hiring 12 AEs this quarter.</small></div>
+        <div class="chip" style="top:6%;right:0"><i></i>Buyer intent<small>Posted twice on ramp time and rep productivity.</small></div>
+        <div class="chip sm" style="top:30%;left:0"><i></i>Recent news<small>Opened a second office in Austin.</small></div>
+        <div class="chip sm" style="top:26%;right:6%"><i></i>Tech stack<small>HubSpot, Gong, Navigator.</small></div>
+        <div class="chip" style="top:46%;left:26%"><i></i>Decision maker<small>Data-first. Skeptical of tools. Values a fast pilot.</small></div>
+        <div class="chip sm" style="bottom:22%;right:0"><i></i>Objection risk<small>Two prospecting tools already trialed.</small></div>
+        <div class="chip sm" style="bottom:4%;left:4%"><i></i>Prior contact<small>Met at Revenue Roundtable, March.</small></div>
+        <div class="chip" style="bottom:0;right:14%"><i></i>Recommended actions<small>Lead with time-to-first-deal. Ask about the first 90 days.</small></div>
+        <div class="dossier brief" aria-label="Example SIP dossier"><div class="d-body"><div class="d-sec">briefing assembled</div><div class="d-line"><b>1.</b>Lead with time-to-first-deal for new AEs, not features.</div><div class="d-line"><b>2.</b>Reference the May raise and the hiring plan directly.</div><div class="d-line"><b>3.</b>Ask what a good first 90 days looks like for a new AE.</div><div class="d-line"><b>4.</b>Propose a four-week pilot with one measurable outcome.</div><div class="d-line"><b>5.</b>Avoid generic AI claims. Show one concrete workflow.</div></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="pillars" id="offer">
+  <div class="wrap">
+    <h2 class="reveal">What you get</h2>
+    <p class="lead reveal" style="margin-top:14px">Nobody buys a report. You're buying more second meetings and more deal flow. Here's how SIP delivers it, in three parts.</p>
+    <div class="grid">
+      <div class="pillar reveal"><h3>1. The dossier</h3><p>The intelligence report on the prospect and the company: who they are, what they're dealing with right now, what they've said publicly, every claim confidence rated.</p></div>
+      <div class="pillar reveal"><h3>2. The strategy</h3><p>Ten selling strategies ranked for this buyer and this account. What to lead with, what to ask, what to avoid. Tailored, not templated.</p></div>
+      <div class="pillar reveal"><h3>3. The war room</h3><p>The interactive layer: rehearse the conversation against a model of the buyer, pressure-test your approach, and walk in with the live battle card. Rolling out through the beta.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="inside" id="dossier">
+  <div class="wrap">
+    <h2 class="reveal">What's in a dossier</h2>
+    <p class="lead reveal" style="margin-top:14px">How SIP collects signals, analyzes them, and packages what your sellers actually use.</p>
+    <div class="tabs reveal" role="tablist">
+      <button class="tab on" data-tab="stack" role="tab">AI stacking</button>
+      <button class="tab" data-tab="method" role="tab">Intelligence methodology</button>
+      <button class="tab" data-tab="brief" role="tab">The briefing</button>
+    </div>
+    <div class="panel on" id="tab-stack">
+      <div class="visual"><svg viewBox="0 0 560 380" class="stacksvg" id="stack" aria-label="Signals stacked into one briefing">
+  <defs><linearGradient id="pl" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#16244A"/><stop offset="1" stop-color="#0C142A"/></linearGradient><linearGradient id="pt" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#14405A"/><stop offset="1" stop-color="#0E2540"/></linearGradient></defs>
+  <g class="lyr"><path d="M60 300 L240 300 L300 340 L120 340 Z" fill="url(#pl)" stroke="#2A3A62"/><line x1="300" y1="320" x2="332" y2="320" stroke="#2A3A62"/><text x="340" y="316" font-family="JetBrains Mono, monospace" font-size="12" fill="#E6EDF7">Signal data</text><text x="340" y="332" font-family="JetBrains Mono, monospace" font-size="10" fill="#8A97B0">public sources, live context</text></g>
+  <g class="lyr"><path d="M60 240 L240 240 L300 280 L120 280 Z" fill="url(#pl)" stroke="#2A3A62"/><line x1="300" y1="260" x2="332" y2="260" stroke="#2A3A62"/><text x="340" y="256" font-family="JetBrains Mono, monospace" font-size="12" fill="#E6EDF7">Company signal</text><text x="340" y="272" font-family="JetBrains Mono, monospace" font-size="10" fill="#8A97B0">funding, hiring, news</text></g>
+  <g class="lyr"><path d="M60 180 L240 180 L300 220 L120 220 Z" fill="url(#pl)" stroke="#2A3A62"/><line x1="300" y1="200" x2="332" y2="200" stroke="#2A3A62"/><text x="340" y="196" font-family="JetBrains Mono, monospace" font-size="12" fill="#E6EDF7">Buyer intent</text><text x="340" y="212" font-family="JetBrains Mono, monospace" font-size="10" fill="#8A97B0">what they've said publicly</text></g>
+  <g class="lyr"><path d="M60 120 L240 120 L300 160 L120 160 Z" fill="url(#pl)" stroke="#2A3A62"/><line x1="300" y1="140" x2="332" y2="140" stroke="#2A3A62"/><text x="340" y="136" font-family="JetBrains Mono, monospace" font-size="12" fill="#E6EDF7">Decision maker</text><text x="340" y="152" font-family="JetBrains Mono, monospace" font-size="10" fill="#8A97B0">how they think and buy</text></g>
+  <g class="lyr"><path d="M60 60 L240 60 L300 100 L120 100 Z" fill="url(#pt)" stroke="#22D3EE"/><line x1="300" y1="80" x2="332" y2="80" stroke="#22D3EE"/><text x="340" y="76" font-family="JetBrains Mono, monospace" font-size="12" fill="#22D3EE">The briefing</text><text x="340" y="92" font-family="JetBrains Mono, monospace" font-size="10" fill="#8A97B0">one page, confidence rated</text></g>
+</svg></div>
+      <div><h3>Four signals, one briefing</h3><p>Company signal, buyer intent, decision-maker profile, and recommended actions are researched by separate agents and assembled into a single document. A rep reads one page instead of six tabs.</p></div>
+    </div>
+    <div class="panel" id="tab-method">
+      <div class="visual"><div class="conf" aria-label="Confidence-rated findings">
+  <div class="conf-h"><span>findings</span><span>confidence</span></div>
+  <div class="conf-row"><div><b>Closed a Series B in May</b><small>3 sources, press and filings</small></div><div class="meter"><i style="--p:96%"></i></div><span class="ok">96% verified</span></div>
+  <div class="conf-row"><div><b>Hiring 12 AEs this quarter</b><small>2 sources, job posts</small></div><div class="meter"><i style="--p:88%"></i></div><span class="ok">88% verified</span></div>
+  <div class="conf-row"><div><b>Prioritizes rep ramp time</b><small>inferred from 2 posts</small></div><div class="meter"><i style="--p:64%"></i></div><span class="mid">64% inferred</span></div>
+  <div class="conf-row"><div><b>Skeptical of new tools</b><small>inferred from tone</small></div><div class="meter"><i style="--p:52%"></i></div><span class="mid">52% inferred</span></div>
+  <div class="conf-f">Agents check each other's work before anything reaches the page.</div>
+</div></div>
+      <div><h3>Collection, analysis, delivery</h3><p>SIP follows the same cycle intelligence analysts use: gather from many sources, weigh reliability, check assumptions, prioritize what matters, and deliver it in a form the seller can act on immediately. Every finding carries a confidence rating so the rep knows what is verified and what is inferred.</p><p style="margin-top:12px"><a class="btn link" href="how-it-works.html">See the full cycle</a></p></div>
+    </div>
+    <div class="panel" id="tab-brief">
+      <div class="visual"><div class="bcard" aria-label="Live battle card">
+  <div class="bc-top"><span class="bc-tag">live battlecard</span><span class="bc-name">Jordan Ellis, CRO · Northline Systems</span></div>
+  <div class="bc-grid">
+    <div class="bc-cell"><span>lead with</span><b>Time-to-first-deal for new AEs, not features.</b></div>
+    <div class="bc-cell"><span>ask</span><b>What does a good first 90 days look like for a new AE?</b></div>
+    <div class="bc-cell"><span>avoid</span><b>Generic AI claims. Show one concrete workflow.</b></div>
+    <div class="bc-cell"><span>reference</span><b>The May raise and the 12-rep hiring plan.</b></div>
+  </div>
+  <div class="bc-bottom"><div><span>second-meeting likelihood</span><b>78%</b></div><div class="bc-btn">Start meeting</div></div>
+</div></div>
+      <div><h3>Enter every meeting. Earn every second meeting.</h3><p>The briefing shows the buyer profile, the research behind it, ten selling strategies ranked by fit, and a live battle card for the meeting itself. More tools open up through the beta.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="pillars tight" id="inside">
+  <div class="wrap">
+    <h2 class="reveal">What SIP is built on</h2>
+    <div class="grid">
+      <div class="pillar reveal"><h3>Intelligence methodology</h3><p>Adapted from the intelligence cycle and published analytic tradecraft: define what you need to know, collect, analyze, check your assumptions, and deliver something the seller can act on.</p></div>
+      <div class="pillar reveal"><h3>Sales best practices</h3><p>Discovery questions, objection handling, and mutual action plans from enterprise sales leaders, applied to each prospect automatically.</p></div>
+      <div class="pillar reveal"><h3>Multi-agent AI</h3><p>Separate research, analysis, and recommendation agents review each other's work before anything reaches the briefing. Every claim carries a confidence rating.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="demo tight" id="demo">
+  <div class="wrap">
+    <h2 class="reveal">Watch a dossier get built from a single name.</h2>
+    <div class="frame reveal"><div class="play" role="button" aria-label="Play demo"></div><span class="cap">Demo, about 90 seconds</span></div>
+  </div>
+</section>
+
+<section class="compare" id="compare">
+  <div class="wrap">
+    <h2 class="reveal">Without SIP. With SIP.</h2>
+    <table id="cmp">
+      <thead><tr><th></th><th>Without SIP</th><th>With SIP</th></tr></thead>
+      <tbody>
+        <tr><td>Research time</td><td>Hours, if it happens</td><td><span>About two minutes</span></td></tr>
+        <tr><td>Sources</td><td>Scattered across tabs and notes</td><td><span>One briefing, confidence rated</span></td></tr>
+        <tr><td>Talking points</td><td>Generic deck, generic questions</td><td><span>Ten strategies ranked for this buyer</span></td></tr>
+        <tr><td>Consistency across reps</td><td>Depends on the rep</td><td><span>Same standard every time</span></td></tr>
+        <tr><td>Second-meeting rate</td><td>Around 25%</td><td><span>Our target: 50% and up</span></td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section class="founder" id="founder">
+  <div class="wrap">
+    <div class="portrait reveal">
+      <img class="photo" src="frank.jpg" alt="Frank Casale" onerror="this.style.display='none'">
+      <svg viewBox="0 0 400 500" aria-hidden="true"><defs><linearGradient id="pg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#22D3EE" stop-opacity=".18"/><stop offset="1" stop-color="#22D3EE" stop-opacity="0"/></linearGradient></defs><circle cx="200" cy="190" r="86" fill="url(#pg)" stroke="#223052"/><path d="M60 500c10-110 70-170 140-170s130 60 140 170" fill="url(#pg)" stroke="#223052"/></svg>
+      <span class="tag">Frank Casale, founder. Photo to come.</span>
+    </div>
+    <div class="reveal">
+      <blockquote>"I wanted something that created less work for a sales team, not more, and paid for itself inside the quarter. I couldn't find it. So we built it."</blockquote>
+      <p class="sig"><b>Frank Casale</b>, Founder. Thirty years as a salesperson, sales manager, and selling founder.</p>
+      <p style="margin-top:18px"><a class="btn link" href="#">Frank on LinkedIn</a></p>
+    </div>
+  </div>
+</section>
+
+<section class="calc" id="calculator">
+  <div class="wrap">
+    <h2 class="reveal">You may not have a lead problem. You may have a conversion leak.</h2>
+    <p class="lead reveal" style="margin-top:18px">Before buying more leads, see what happens when your team converts more of the meetings it already earns. Use your own numbers.</p>
+    <div class="panel reveal">
+      <div>
+        <div class="field"><label for="meetings">First meetings per year</label><input id="meetings" type="number" value="288" min="0"></div>
+        <div class="field"><label for="conv">Current first-to-second meeting conversion</label><div class="range"><input id="conv" type="range" min="5" max="80" value="25"><span class="mono" id="convv">25%</span></div></div>
+        <div class="field"><label for="target">Target conversion</label><div class="range"><input id="target" type="range" min="5" max="90" value="50"><span class="mono" id="targetv">50%</span></div></div>
+        <div class="field"><label for="close">Close rate on qualified opportunities</label><div class="range"><input id="close" type="range" min="1" max="60" value="15"><span class="mono" id="closev">15%</span></div></div>
+        <div class="field"><label for="ltv">Customer lifetime value ($)</label><input id="ltv" type="number" value="100000" min="0" step="1000"></div>
+        <a class="btn primary mob-cta" href="index.html#waitlist">Join the waitlist</a>
+      </div>
+      <div class="result">
+        <div><div class="big" id="total">$1,080,000</div><div class="sub">additional customer value per year, illustrative</div></div>
+        <div class="kv"><span>Additional second meetings</span><span id="addm">72</span><span>Additional closed customers</span><span id="addc">10.8</span></div>
+        <a class="btn primary" href="index.html#waitlist">Join the waitlist</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="waitlist" id="waitlist">
+  <div class="wrap">
+    <h2 class="reveal">Join the waitlist.</h2>
+    <div class="box reveal">
+      <div>
+        <p class="lead">SIP is in private beta with a small group of sales leaders. The waitlist gets in next.</p>
+        <ul><li>Free trial at launch, no card required</li><li>Priority onboarding</li><li>A say in what we build next</li></ul>
+      </div>
+      <form class="form" onsubmit="event.preventDefault();this.querySelector('.btn').textContent='You are on the waitlist';">
+        <input placeholder="First name" aria-label="First name" required>
+        <input placeholder="Last name" aria-label="Last name" required>
+        <input class="full" type="email" placeholder="Work email" aria-label="Work email" required>
+        <input placeholder="Company" aria-label="Company">
+        <select aria-label="Role"><option value="">Role</option><option>Sales leader</option><option>Account executive</option><option>Founder who sells</option><option>Other</option></select>
+        <button class="btn primary" type="submit">Join the waitlist</button>
+        <p class="fine">We'll email you when your access is ready. Nothing else.</p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<section class="faq tight" id="faq">
+  <div class="wrap">
+    <h2 class="reveal" style="margin-bottom:28px">Questions sales leaders ask</h2>
+    <details><summary>What is SIP?</summary><p>A sales intelligence and personalization platform. You give it a prospect, it gives you a prepared, personalized playbook for the conversation: research, recommendations, and a live battle card.</p></details>
+    <details><summary>How long does a dossier take?</summary><p>About two minutes from a name and company.</p></details>
+    <details><summary>Who is SIP for?</summary><p>Sales leaders, account executives, and founders who sell, especially teams where the first meeting is the hard part.</p></details>
+    <details><summary>Does it replace my CRM?</summary><p>No. The CRM keeps score. SIP is the layer that helps you score. Keep what you have.</p></details>
+    <details><summary>When can I try it?</summary><p>Private beta is running now. Join the waitlist and you'll hear from us when public access opens.</p></details>
+  </div>
+</section>
+
+<section class="close">
+  <div class="wrap">
+    <h2 class="reveal">Ready to see what SIP could do for your pipeline?</h2>
+    <div class="actions reveal"><a class="btn primary" href="#waitlist">Join the waitlist</a><a class="btn ghost" href="#calculator">Run your own numbers</a></div>
+  </div>
+</section>
+<footer>
+  <div class="wrap">
+    <div class="fcols">
+      <div class="fbrand"><img class="logomark" src="sip-logo.png" width="160" height="56" alt="SIP"><span class="ftag">Sales Intelligence &amp; Personalization</span><span class="fline">Built by sales pros, for sales pros.</span></div>
+      <div class="flinks"><a href="index.html#waitlist">Waitlist</a><a href="roi.html">ROI calculator</a><a href="contact.html">Contact</a><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a></div>
+    </div>
+    <div class="fcopy">© 2026 SIP. All rights reserved.<br><a class="credit" href="https://famedia.agency" target="_blank" rel="noopener">Designed by Famedia</a></div>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script>
+window.addEventListener('scroll',()=>{document.getElementById('nav').classList.toggle('scrolled',window.scrollY>24)},{passive:true});
+window.SIP={reduce:window.matchMedia('(prefers-reduced-motion: reduce)').matches,mobile:window.matchMedia('(max-width: 820px)').matches};
+if(!window.SIP.reduce&&typeof gsap!=='undefined'){gsap.registerPlugin(ScrollTrigger);
+document.querySelectorAll('.reveal').forEach(el=>gsap.to(el,{opacity:1,y:0,duration:.7,ease:'power2.out',scrollTrigger:{trigger:el,start:'top 84%',once:true}}));}
+else{document.querySelectorAll('.reveal').forEach(el=>{el.style.opacity=1;el.style.transform='none'})}
+</script>
+<script>
+(function(){const $=id=>document.getElementById(id);const fmt=n=>'$'+Math.round(n).toLocaleString();
+function calc(){const m=+$('meetings').value||0,c=+$('conv').value/100,t=+$('target').value/100,cl=+$('close').value/100,l=+$('ltv').value||0;
+$('convv').textContent=Math.round(c*100)+'%';$('targetv').textContent=Math.round(t*100)+'%';$('closev').textContent=Math.round(cl*100)+'%';
+const add=Math.max(0,m*(t-c)),closed=add*cl;$('addm').textContent=Math.round(add);$('addc').textContent=closed.toFixed(1);$('total').textContent=fmt(closed*l);}
+['meetings','conv','target','close','ltv'].forEach(id=>$(id).addEventListener('input',calc));calc();})();
+</script>
+<script>
+(function(){
+  if(window.SIP.reduce||typeof gsap==='undefined'){document.querySelectorAll('.bar .fill').forEach(f=>f.style.width=f.style.getPropertyValue('--w'));document.getElementById('stat40').textContent='40%';document.querySelectorAll('#cmp tr').forEach(r=>{r.style.opacity=1;r.style.transform='none';r.classList.add('on')});document.querySelectorAll('#stack .lyr').forEach(l=>{l.style.opacity=1;l.style.transform='none'});const tabs=document.querySelectorAll('.inside .tab'),panels=document.querySelectorAll('.inside .panel');tabs.forEach(t=>t.addEventListener('click',()=>{tabs.forEach(x=>x.classList.toggle('on',x===t));panels.forEach(p=>p.classList.toggle('on',p.id==='tab-'+t.dataset.tab));}));return;}
+  const $=id=>document.getElementById(id);
+  /* hero dossier assembles once */
+  gsap.to('.hero .dossier .d-line',{opacity:1,y:0,duration:.45,stagger:.35,delay:.5,ease:'power2.out'});
+  let s=0;const ck=setInterval(()=>{s++;if(s>=118){clearInterval(ck)}$('clock').textContent='00:'+String(Math.min(s,59)).padStart(2,'0');if(s>=8){clearInterval(ck);$('clock').textContent='01:52'}},1000);
+  /* problem: pinned, scrubbed, reverses on scroll back */
+  {
+    const fills=document.querySelectorAll('.bar .fill'),cnt={v:0};
+    const ptl=gsap.timeline({scrollTrigger:{trigger:'#problem',start:window.SIP.mobile?'bottom 96%':'center center',end:window.SIP.mobile?'+=420':'+=650',scrub:.5,pin:true,anticipatePin:1}});
+    ptl.to(fills[0],{width:fills[0].style.getPropertyValue('--w'),duration:1,ease:'none'})
+       .to(fills[1],{width:fills[1].style.getPropertyValue('--w'),duration:1,ease:'none'})
+       .to(fills[2],{width:fills[2].style.getPropertyValue('--w'),duration:.8,ease:'none'})
+       .to(cnt,{v:40,duration:1.2,ease:'none',onUpdate:()=>{$('stat40').textContent=Math.round(cnt.v)+'%'}},'-=.4');
+  }
+  /* background story: color + sweep intensity */
+  const bg=$('bg'),root=document.documentElement;
+  const st=(c,s)=>()=>{bg.style.background=c;root.style.setProperty('--sweep',s)};
+  ScrollTrigger.create({trigger:'#problem',start:'top 60%',onEnter:st('#0B1B3A','.45'),onLeaveBack:st('#0A1020','.25')});
+  ScrollTrigger.create({trigger:'#how',start:'top 60%',onEnter:st('#0C1530','.6'),onLeaveBack:st('#0B1B3A','.45')});
+  ScrollTrigger.create({trigger:'#inside',start:'top 60%',onEnter:st('#0E1526','.2'),onLeaveBack:st('#0C1530','.6')});
+  ScrollTrigger.create({trigger:'#founder',start:'top 60%',onEnter:st('#121A2C','.1'),onLeaveBack:st('#0E1526','.2')});
+  ScrollTrigger.create({trigger:'#calculator',start:'top 60%',onEnter:st('#080D1A','.3'),onLeaveBack:st('#121A2C','.1')});
+  /* inside: tabs + stack */
+  {
+    const tabs=document.querySelectorAll('.inside .tab'),panels=document.querySelectorAll('.inside .panel');
+    tabs.forEach(t=>t.addEventListener('click',()=>{tabs.forEach(x=>x.classList.toggle('on',x===t));panels.forEach(p=>p.classList.toggle('on',p.id==='tab-'+t.dataset.tab));ScrollTrigger.refresh();}));
+    gsap.to('#stack .lyr',{opacity:1,y:0,duration:.6,stagger:.14,ease:'power2.out',scrollTrigger:{trigger:'#stack',start:'top 80%',once:true}});
+  }
+  /* compare rows */
+  document.querySelectorAll('#cmp tbody tr').forEach((r,i)=>gsap.to(r,{opacity:1,y:0,duration:.5,delay:i*.08,ease:'power2.out',scrollTrigger:{trigger:'#cmp',start:'top 78%',once:true},onComplete:()=>r.classList.add('on')}));
+  /* the moment: signals converge into the briefing */
+  {
+    const box=$('fieldbox'),chips=box.querySelectorAll('.chip'),brief=box.querySelector('.brief');
+    const bx=box.getBoundingClientRect(),cx=bx.width/2,cy=bx.height/2;
+    const tl=gsap.timeline({scrollTrigger:{trigger:'#how',start:window.SIP.mobile?'bottom 96%':'center center',end:window.SIP.mobile?'+=520':'+=700',scrub:.5,pin:true,anticipatePin:1}});
+    chips.forEach((c,i)=>{const r=c.getBoundingClientRect();const dx=cx-(r.left-bx.left+r.width/2),dy=cy-(r.top-bx.top+r.height/2);
+      tl.to(c,{x:dx,y:dy,scale:.35,opacity:0,duration:1,ease:'power2.inOut'},i*.12);});
+    tl.to(brief,{opacity:1,scale:1,duration:.8,ease:'power2.out'},'-=.5')
+      .to(brief.querySelectorAll('.d-line'),{opacity:1,x:0,duration:.4,stagger:.12},'-=.2');
+  }
+})();
+</script>
+</body></html>

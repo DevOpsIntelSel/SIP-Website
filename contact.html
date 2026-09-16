@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Contact SIP</title>
+<meta name="description" content="Questions about SIP, the beta, or working with us.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%230A1020'/%3E%3Ctext x='8' y='44' font-family='Arial' font-weight='900' font-style='italic' font-size='30' fill='%23C9CED6'%3ESIP%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="sip.css">
+</head>
+<body>
+<div id="bg" aria-hidden="true"><div class="grid"></div></div>
+<nav id="nav">
+  <div class="wrap">
+    <a href="index.html" aria-label="SIP home"><img class="logomark" src="sip-logo.png" width="160" height="56" alt="SIP"></a>
+    <div class="navlinks"><a href="how-it-works.html">How it works</a><a href="roi.html">ROI calculator</a><a href="index.html#waitlist">Waitlist</a><a href="contact.html" class="active">Contact</a><a class="btn primary" href="index.html#waitlist">Join the waitlist</a></div>
+    <button class="burger" aria-label="Menu" onclick="document.getElementById('mm').classList.toggle('open')"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+<div class="mobile-menu" id="mm" onclick="if(event.target.tagName==='A')this.classList.remove('open')">
+  <a href="how-it-works.html">How it works</a><a href="roi.html">ROI calculator</a><a href="index.html#waitlist">Waitlist</a><a href="contact.html">Contact</a>
+  <a class="btn primary" href="index.html#waitlist">Join the waitlist</a>
+</div>
+<section class="page-hero">
+  <div class="wrap">
+    <h1>Talk to us.</h1>
+    <p class="lead" style="margin-top:22px">Questions about SIP, the beta, or whether it fits your team. Send a note and we'll get back to you.</p>
+  </div>
+</section>
+<section class="contact" style="padding-top:8px">
+  <div class="wrap">
+    <div class="box reveal">
+      <div>
+        <h3>What to expect</h3>
+        <div class="list">
+          <div><span>beta</span><span>Private beta is running now with a small group of sales leaders. If you want in on the next round, the waitlist is the fastest path.</span></div>
+          <div><span>teams</span><span>Running a sales team and want to talk through a pilot? Say so and we'll set up a call.</span></div>
+          <div><span>partners</span><span>Tell us who you are and what you're thinking.</span></div>
+          <div><span>email</span><span>hello@[domain]</span></div>
+        </div>
+      </div>
+      <form class="form" onsubmit="event.preventDefault();this.querySelector('.btn').textContent='Sent. Thank you.';">
+        <input placeholder="First name" aria-label="First name" required>
+        <input placeholder="Last name" aria-label="Last name" required>
+        <input class="full" type="email" placeholder="Work email" aria-label="Work email" required>
+        <input placeholder="Company" aria-label="Company">
+        <select aria-label="Topic"><option value="">What's this about?</option><option>Joining the beta</option><option>A pilot for my team</option><option>Press or partnership</option><option>Something else</option></select>
+        <textarea class="full" placeholder="Your message" aria-label="Message" required></textarea>
+        <button class="btn primary" type="submit">Send message</button>
+        <p class="fine">Or skip the form: <a href="index.html#waitlist">join the waitlist</a> and we'll reach out.</p>
+      </form>
+    </div>
+  </div>
+</section>
+<footer>
+  <div class="wrap">
+    <div class="fcols">
+      <div class="fbrand"><img class="logomark" src="sip-logo.png" width="160" height="56" alt="SIP"><span class="ftag">Sales Intelligence &amp; Personalization</span><span class="fline">Built by sales pros, for sales pros.</span></div>
+      <div class="flinks"><a href="index.html#waitlist">Waitlist</a><a href="roi.html">ROI calculator</a><a href="contact.html">Contact</a><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a></div>
+    </div>
+    <div class="fcopy">© 2026 SIP. All rights reserved.<br><a class="credit" href="https://famedia.agency" target="_blank" rel="noopener">Designed by Famedia</a></div>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script>
+window.addEventListener('scroll',()=>{document.getElementById('nav').classList.toggle('scrolled',window.scrollY>24)},{passive:true});
+window.SIP={reduce:window.matchMedia('(prefers-reduced-motion: reduce)').matches,mobile:window.matchMedia('(max-width: 820px)').matches};
+if(!window.SIP.reduce&&typeof gsap!=='undefined'){gsap.registerPlugin(ScrollTrigger);
+document.querySelectorAll('.reveal').forEach(el=>gsap.to(el,{opacity:1,y:0,duration:.7,ease:'power2.out',scrollTrigger:{trigger:el,start:'top 84%',once:true}}));}
+else{document.querySelectorAll('.reveal').forEach(el=>{el.style.opacity=1;el.style.transform='none'})}
+</script>
+</body></html>
