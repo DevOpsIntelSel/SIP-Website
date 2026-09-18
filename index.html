@@ -222,11 +222,15 @@
         <div class="field"><label for="close">Close rate on qualified opportunities</label><div class="range"><input id="close" type="range" min="1" max="60" value="15"><span class="mono" id="closev">15%</span></div></div>
         <div class="field"><label for="ltv">Customer lifetime value ($)</label><input id="ltv" type="number" value="100000" min="0" step="1000"></div>
         <a class="btn primary mob-cta" href="index.html#waitlist">Join the waitlist</a>
+        <button class="btn ghost mob-cta js-roi-calculate" type="button">Calculate</button>
       </div>
-      <div class="result">
-        <div><div class="big" id="total">$1,080,000</div><div class="sub">additional customer value per year, illustrative</div></div>
-        <div class="kv"><span>Additional second meetings</span><span id="addm">72</span><span>Additional closed customers</span><span id="addc">10.8</span></div>
-        <a class="btn primary" href="index.html#waitlist">Join the waitlist</a>
+      <div class="result" data-roi-result>
+        <div><div class="big" id="total" aria-live="polite">$—</div><div class="sub" id="totalsub">Press Calculate to see what those numbers are worth.</div></div>
+        <div class="kv"><span>Additional second meetings</span><span id="addm">—</span><span>Additional closed customers</span><span id="addc">—</span></div>
+        <div class="result-actions">
+          <a class="btn primary" href="index.html#waitlist">Join the waitlist</a>
+          <button class="btn ghost js-roi-calculate" type="button">Calculate</button>
+        </div>
       </div>
     </div>
   </div>
@@ -291,10 +295,14 @@ else{document.querySelectorAll('.reveal').forEach(el=>{el.style.opacity=1;el.sty
 </script>
 <script>
 (function(){const $=id=>document.getElementById(id);const fmt=n=>'$'+Math.round(n).toLocaleString();
-function calc(){const m=+$('meetings').value||0,c=+$('conv').value/100,t=+$('target').value/100,cl=+$('close').value/100,l=+$('ltv').value||0;
-$('convv').textContent=Math.round(c*100)+'%';$('targetv').textContent=Math.round(t*100)+'%';$('closev').textContent=Math.round(cl*100)+'%';
-const add=Math.max(0,m*(t-c)),closed=add*cl;$('addm').textContent=Math.round(add);$('addc').textContent=closed.toFixed(1);$('total').textContent=fmt(closed*l);}
-['meetings','conv','target','close','ltv'].forEach(id=>$(id).addEventListener('input',calc));calc();})();
+function labels(){if(!$('conv'))return;$('convv').textContent=Math.round((+$('conv').value||0))+'%';$('targetv').textContent=Math.round((+$('target').value||0))+'%';$('closev').textContent=Math.round((+$('close').value||0))+'%';}
+function calc(){if(!$('meetings'))return;const m=+$('meetings').value||0,c=+$('conv').value/100,t=+$('target').value/100,cl=+$('close').value/100,l=+$('ltv').value||0;
+labels();const add=Math.max(0,m*(t-c)),closed=add*cl;$('addm').textContent=Math.round(add);$('addc').textContent=closed.toFixed(1);$('total').textContent=fmt(closed*l);
+const sub=$('totalsub');if(sub)sub.textContent='additional customer value per year, illustrative';
+const box=document.querySelector('[data-roi-result]');if(box){box.classList.remove('is-stale');box.classList.add('is-ready');}}
+window.SIP=window.SIP||{};window.SIP.computeRoi=calc;
+['meetings','conv','target','close','ltv'].forEach(id=>{const el=$(id);if(!el)return;el.addEventListener('input',()=>{labels();const box=document.querySelector('[data-roi-result]');if(box&&box.classList.contains('is-ready')){box.classList.add('is-stale');const sub=$('totalsub');if(sub)sub.textContent='Press Calculate to update this number.';}});});
+labels();})();
 </script>
 <script>
 (function(){

@@ -2,16 +2,12 @@
   var WEBHOOK = "https://script.google.com/macros/s/AKfycbwHYM6hoyvUoqf_qKIqN6jJCqg_3PEzfQZ3Uw8z5kNVhdbRW8VP0YuqXtT4yM7MFYmP/exec";
 
   function post(fields) {
-    var body = new URLSearchParams();
-    Object.keys(fields).forEach(function (key) {
-      if (fields[key] === undefined || fields[key] === null) return;
-      body.append(key, String(fields[key]));
-    });
     return fetch(WEBHOOK, {
       method: "POST",
       mode: "no-cors",
-      headers: { "Content-Type": "application/x-www-form-urlencoded" },
-      body: body.toString(),
+      redirect: "follow",
+      headers: { "Content-Type": "text/plain;charset=utf-8" },
+      body: JSON.stringify(fields),
     });
   }
 
@@ -82,6 +78,9 @@
       );
       post(payload)
         .then(function () {
+          if (window.SIP && typeof window.SIP.computeRoi === "function") {
+            window.SIP.computeRoi();
+          }
           var calc = calculatorFields();
           if (!calc) return;
           calc.firstName = payload.firstName || "";
@@ -135,21 +134,45 @@
     });
   }
 
+  function bindCalculate() {
+    var buttons = document.querySelectorAll(".js-roi-calculate");
+    if (!buttons.length) return;
+    buttons.forEach(function (btn) {
+      btn.addEventListener("click", function () {
+        if (window.SIP && typeof window.SIP.computeRoi === "function") {
+          window.SIP.computeRoi();
+        }
+        var fields = calculatorFields();
+        if (!fields) return;
+        buttons.forEach(function (el) {
+          el.disabled = true;
+          el.textContent = "Saving…";
+        });
+        post(fields)
+          .then(function () {
+            buttons.forEach(function (el) {
+              el.disabled = false;
+              el.textContent = "Calculated";
+            });
+            setTimeout(function () {
+              buttons.forEach(function (el) {
+                if (el.textContent === "Calculated") el.textContent = "Calculate";
+              });
+            }, 1600);
+          })
+          .catch(function () {
+            buttons.forEach(function (el) {
+              el.disabled = false;
+              el.textContent = "Calculate";
+            });
+          });
+      });
+    });
+  }
+
   document.querySelectorAll("form.form").forEach(function (form) {
     if (form.querySelector("textarea[name='message']")) bindContact(form);
     else bindWaitlist(form);
   });
-
-  var calcTimer;
-  ["meetings", "conv", "target", "close", "ltv"].forEach(function (id) {
-    var el = document.getElementById(id);
-    if (!el) return;
-    el.addEventListener("input", function () {
-      clearTimeout(calcTimer);
-      calcTimer = setTimeout(function () {
-        var fields = calculatorFields();
-        if (fields) post(fields);
-      }, 2000);
-    });
-  });
+  bindCalculate();
 })();
