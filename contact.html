@@ -5,7 +5,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Contact SIP</title>
 <meta name="description" content="Questions about SIP, the beta, or working with us.">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%230A1020'/%3E%3Ctext x='8' y='44' font-family='Arial' font-weight='900' font-style='italic' font-size='30' fill='%23C9CED6'%3ESIP%3C/text%3E%3C/svg%3E">
+<link rel="icon" type="image/png" href="favicon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+<link rel="icon" type="image/png" sizes="64x64" href="favicon-64.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="sip.css">
@@ -41,13 +44,13 @@
           <div><span>email</span><span>hello@[domain]</span></div>
         </div>
       </div>
-      <form class="form" onsubmit="event.preventDefault();this.querySelector('.btn').textContent='Sent. Thank you.';">
-        <input placeholder="First name" aria-label="First name" required>
-        <input placeholder="Last name" aria-label="Last name" required>
-        <input class="full" type="email" placeholder="Work email" aria-label="Work email" required>
-        <input placeholder="Company" aria-label="Company">
-        <select aria-label="Topic"><option value="">What's this about?</option><option>Joining the beta</option><option>A pilot for my team</option><option>Press or partnership</option><option>Something else</option></select>
-        <textarea class="full" placeholder="Your message" aria-label="Message" required></textarea>
+      <form class="form" action="#" method="post">
+        <input name="firstName" placeholder="First name" aria-label="First name" autocomplete="given-name" required>
+        <input name="lastName" placeholder="Last name" aria-label="Last name" autocomplete="family-name" required>
+        <input class="full" name="email" type="email" placeholder="Work email" aria-label="Work email" autocomplete="email" required>
+        <input name="company" placeholder="Company" aria-label="Company" autocomplete="organization">
+        <select name="topic" aria-label="Topic"><option value="">What's this about?</option><option>Joining the beta</option><option>A pilot for my team</option><option>Press or partnership</option><option>Something else</option></select>
+        <textarea class="full" name="message" placeholder="Your message" aria-label="Message" required></textarea>
         <button class="btn primary" type="submit">Send message</button>
         <p class="fine">Or skip the form: <a href="index.html#waitlist">join the waitlist</a> and we'll reach out.</p>
       </form>
@@ -73,4 +76,5 @@ if(!window.SIP.reduce&&typeof gsap!=='undefined'){gsap.registerPlugin(ScrollTrig
 document.querySelectorAll('.reveal').forEach(el=>gsap.to(el,{opacity:1,y:0,duration:.7,ease:'power2.out',scrollTrigger:{trigger:el,start:'top 84%',once:true}}));}
 else{document.querySelectorAll('.reveal').forEach(el=>{el.style.opacity=1;el.style.transform='none'})}
 </script>
+<script src="sip-sheets.js"></script>
 </body></html>

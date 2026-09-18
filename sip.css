@@ -225,6 +225,7 @@ nav a[aria-label="SIP home"]{display:inline-flex;align-items:center;min-height:4
 .form textarea{min-height:140px;resize:vertical}
 .form input:focus-visible,.form select:focus-visible,.form textarea:focus-visible{outline:2px solid var(--primary);outline-offset:2px}
 .form .btn{grid-column:1/-1}
+.form .btn:disabled{opacity:.75;cursor:wait;transform:none}
 .form .fine{grid-column:1/-1;color:var(--muted);font-size:.85rem}
 
 /* faq */

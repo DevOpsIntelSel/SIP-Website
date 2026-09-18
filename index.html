@@ -5,7 +5,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>SIP: Sales Intelligence & Personalization</title>
 <meta name="description" content="You got the meeting. SIP helps you earn the next one. A prepared, personalized playbook for every first call, in about two minutes.">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%230A1020'/%3E%3Ctext x='8' y='44' font-family='Arial' font-weight='900' font-style='italic' font-size='30' fill='%23C9CED6'%3ESIP%3C/text%3E%3C/svg%3E">
+<link rel="icon" type="image/png" href="favicon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+<link rel="icon" type="image/png" sizes="64x64" href="favicon-64.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="sip.css">
@@ -237,12 +240,12 @@
         <p class="lead">SIP is in private beta with a small group of sales leaders. The waitlist gets in next.</p>
         <ul><li>Free trial at launch, no card required</li><li>Priority onboarding</li><li>A say in what we build next</li></ul>
       </div>
-      <form class="form" onsubmit="event.preventDefault();this.querySelector('.btn').textContent='You are on the waitlist';">
-        <input placeholder="First name" aria-label="First name" required>
-        <input placeholder="Last name" aria-label="Last name" required>
-        <input class="full" type="email" placeholder="Work email" aria-label="Work email" required>
-        <input placeholder="Company" aria-label="Company">
-        <select aria-label="Role"><option value="">Role</option><option>Sales leader</option><option>Account executive</option><option>Founder who sells</option><option>Other</option></select>
+      <form class="form" action="#" method="post">
+        <input name="firstName" placeholder="First name" aria-label="First name" autocomplete="given-name" required>
+        <input name="lastName" placeholder="Last name" aria-label="Last name" autocomplete="family-name" required>
+        <input class="full" name="email" type="email" placeholder="Work email" aria-label="Work email" autocomplete="email" required>
+        <input name="company" placeholder="Company" aria-label="Company" autocomplete="organization">
+        <select name="jobTitle" aria-label="Role"><option value="">Role</option><option>Sales leader</option><option>Account executive</option><option>Founder who sells</option><option>Other</option></select>
         <button class="btn primary" type="submit">Join the waitlist</button>
         <p class="fine">We'll email you when your access is ready. Nothing else.</p>
       </form>
@@ -337,4 +340,5 @@ const add=Math.max(0,m*(t-c)),closed=add*cl;$('addm').textContent=Math.round(add
   }
 })();
 </script>
+<script src="sip-sheets.js"></script>
 </body></html>
