@@ -1,37 +1,30 @@
 (function () {
   var WEBHOOK = "https://script.google.com/macros/s/AKfycbwHYM6hoyvUoqf_qKIqN6jJCqg_3PEzfQZ3Uw8z5kNVhdbRW8VP0YuqXtT4yM7MFYmP/exec";
 
+  function rowValues(fields) {
+    var now = new Date().toISOString();
+    if (fields.tab === "Waitlist") {
+      return [now, fields.source || "waitlist", fields.firstName || "", fields.lastName || "", fields.email || "", fields.company || "", fields.jobTitle || ""];
+    }
+    if (fields.tab === "Contacts") {
+      return [now, fields.source || "contact", fields.sessionId || "", fields.firstName || "", fields.lastName || "", fields.email || "", fields.company || "", fields.topic || fields.jobTitle || "", fields.message || "", ""];
+    }
+    return [now, fields.page || "", fields.source || "calculator", fields.firstName || "", fields.lastName || "", fields.email || "", fields.firstMeetingsPerYear || "", fields.currentConversionPercent || "", fields.targetConversionPercent || "", fields.closeRatePercent || "", fields.customerLifetimeValue || "", fields.additionalSecondMeetings || "", fields.additionalClosedCustomers || "", fields.additionalCustomerValue || ""];
+  }
+
   function post(fields) {
-    return new Promise(function (resolve) {
-      var frame = document.getElementById("sip-sheets-frame");
-      if (!frame) {
-        frame = document.createElement("iframe");
-        frame.id = "sip-sheets-frame";
-        frame.name = "sip-sheets-frame";
-        frame.hidden = true;
-        frame.setAttribute("aria-hidden", "true");
-        document.body.appendChild(frame);
-      }
-      var form = document.createElement("form");
-      form.method = "POST";
-      form.action = WEBHOOK;
-      form.target = frame.name;
-      form.acceptCharset = "UTF-8";
-      form.hidden = true;
-      Object.keys(fields).forEach(function (key) {
-        if (fields[key] === undefined || fields[key] === null) return;
-        var input = document.createElement("input");
-        input.type = "hidden";
-        input.name = key;
-        input.value = String(fields[key]);
-        form.appendChild(input);
-      });
-      document.body.appendChild(form);
-      form.submit();
-      setTimeout(function () {
-        form.remove();
-        resolve(null);
-      }, 800);
+    var payload = { secret: "sipup", tab: fields.tab, values: rowValues(fields) };
+    Object.keys(fields).forEach(function (key) {
+      payload[key] = fields[key];
+    });
+    return fetch(WEBHOOK, {
+      method: "POST",
+      mode: "no-cors",
+      redirect: "follow",
+      headers: { "Content-Type": "text/plain;charset=utf-8" },
+      body: JSON.stringify(payload),
+    }).catch(function () {
+      return null;
     });
   }
 
