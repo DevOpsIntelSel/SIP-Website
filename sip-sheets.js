@@ -2,14 +2,36 @@
   var WEBHOOK = "https://script.google.com/macros/s/AKfycbwHYM6hoyvUoqf_qKIqN6jJCqg_3PEzfQZ3Uw8z5kNVhdbRW8VP0YuqXtT4yM7MFYmP/exec";
 
   function post(fields) {
-    return fetch(WEBHOOK, {
-      method: "POST",
-      mode: "no-cors",
-      redirect: "manual",
-      headers: { "Content-Type": "text/plain;charset=utf-8" },
-      body: JSON.stringify(fields),
-    }).catch(function () {
-      return null;
+    return new Promise(function (resolve) {
+      var frame = document.getElementById("sip-sheets-frame");
+      if (!frame) {
+        frame = document.createElement("iframe");
+        frame.id = "sip-sheets-frame";
+        frame.name = "sip-sheets-frame";
+        frame.hidden = true;
+        frame.setAttribute("aria-hidden", "true");
+        document.body.appendChild(frame);
+      }
+      var form = document.createElement("form");
+      form.method = "POST";
+      form.action = WEBHOOK;
+      form.target = frame.name;
+      form.acceptCharset = "UTF-8";
+      form.hidden = true;
+      Object.keys(fields).forEach(function (key) {
+        if (fields[key] === undefined || fields[key] === null) return;
+        var input = document.createElement("input");
+        input.type = "hidden";
+        input.name = key;
+        input.value = String(fields[key]);
+        form.appendChild(input);
+      });
+      document.body.appendChild(form);
+      form.submit();
+      setTimeout(function () {
+        form.remove();
+        resolve(null);
+      }, 800);
     });
   }
 
