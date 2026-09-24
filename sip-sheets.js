@@ -5,9 +5,11 @@
     return fetch(WEBHOOK, {
       method: "POST",
       mode: "no-cors",
-      redirect: "follow",
+      redirect: "manual",
       headers: { "Content-Type": "text/plain;charset=utf-8" },
       body: JSON.stringify(fields),
+    }).catch(function () {
+      return null;
     });
   }
 
